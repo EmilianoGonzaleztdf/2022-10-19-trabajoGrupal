@@ -30,4 +30,10 @@ export class Instructor {
             return false;
         }
     }
+    public getNombre():string{
+        return this.nombre;
+    }
+    public getApellido():string{
+        return this.apellido;
+    }
 }

@@ -19,6 +19,11 @@ let CursoEspecial2 : CursoEspecial = new CursoEspecial ("POO","presencial", 8 , 
 let capacitacion1 : Capacitacion = new Capacitacion (curso1);
 let capacitacion2 : Capacitacion = new Capacitacion (curso2);
 
+if(instructor1.inscribirACurso(capacitacion1)){
+    console.log(instructor1.getNombre() + " " + instructor1.getApellido() +" se inscribio al curso: " + capacitacion1.getCurso().getNombre());
+}else{console.log(instructor1.getNombre() + " " + instructor1.getApellido() +"no se puede inscribir al curso: " + capacitacion1.getCurso().getNombre() + " porque ya esta inscripto")}
+
+
 console.log(instructor1.inscribirACurso(capacitacion1));
 console.log(instructor1.inscribirACurso(capacitacion2));
 console.log(instructor1.inscribirACurso(capacitacion1));
@@ -36,4 +41,3 @@ capacitacion2.agregarNota(10);
 
 console.log(capacitacion1.getNotasCurso());
 console.log(capacitacion2.getNotasCurso());
-
