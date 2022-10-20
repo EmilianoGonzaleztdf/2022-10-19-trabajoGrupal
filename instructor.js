@@ -25,6 +25,12 @@ var Instructor = /** @class */ (function () {
             return false;
         }
     };
+    Instructor.prototype.getNombre = function () {
+        return this.nombre;
+    };
+    Instructor.prototype.getApellido = function () {
+        return this.apellido;
+    };
     return Instructor;
 }());
 exports.Instructor = Instructor;

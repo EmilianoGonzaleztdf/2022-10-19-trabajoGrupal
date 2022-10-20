@@ -16,9 +16,18 @@ var CursoEspecial1 = new CursoEspecial_1.CursoEspecial("AWS", "Online", 7, 7);
 var CursoEspecial2 = new CursoEspecial_1.CursoEspecial("POO", "presencial", 8, 8);
 var capacitacion1 = new capacitacion_1.Capacitacion(curso1);
 var capacitacion2 = new capacitacion_1.Capacitacion(curso2);
-console.log(instructor1.inscribirACurso(capacitacion1));
-console.log(instructor1.inscribirACurso(capacitacion2));
-console.log(instructor1.inscribirACurso(capacitacion1));
+function inscribirIntructor(pInstructor, pCapacitacion) {
+    if (pInstructor.inscribirACurso(pCapacitacion)) {
+        console.log("El instructor: " + pInstructor.getNombre() + " " + pInstructor.getApellido() + " se inscribio al curso: " + pCapacitacion.getCurso().getNombre());
+    }
+    else {
+        console.log("El instructor: " + pInstructor.getNombre() + " " + pInstructor.getApellido() + " no se puede inscribir al curso: " + pCapacitacion.getCurso().getNombre() + " porque ya esta inscripto");
+    }
+}
+function imprimirNotas(pCapacitacion) {
+    console.log("Las notas de la capacitacion " + pCapacitacion.getCurso().getNombre() + " son : " + capacitacion1.getNotasCurso());
+}
+;
 capacitacion1.agregarNota(10);
 capacitacion1.agregarNota(5);
 capacitacion1.agregarNota(7);
@@ -29,5 +38,9 @@ capacitacion2.agregarNota(2);
 capacitacion2.agregarNota(1);
 capacitacion2.agregarNota(7);
 capacitacion2.agregarNota(10);
-console.log(capacitacion1.getNotasCurso());
-console.log(capacitacion2.getNotasCurso());
+inscribirIntructor(instructor1, capacitacion1);
+inscribirIntructor(instructor2, capacitacion1);
+inscribirIntructor(instructor1, capacitacion1);
+inscribirIntructor(instructor3, capacitacion2);
+imprimirNotas(capacitacion1);
+imprimirNotas(capacitacion2);
